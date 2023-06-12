@@ -54,6 +54,7 @@ export const StyledLink = styled(NavLink)`
   padding: 10px;
   cursor: pointer;
 
+  color: inherit;
   font-weight: 600;
   line-height: 1.12;
 
