@@ -1,42 +1,33 @@
+import { useState, useEffect } from "react";
+import { fetchCities } from "../../../utils/serverAPI/citiesAPI";
 import { Container, Title, List } from "./CitiesList.styled";
 
 export const CitiesList = () => {
-  const cities = [
-    "Kyiv",
-    "Kharkiv",
-    "Lviv",
-    "Dnipro",
-    "Odessa",
-    "New York",
-    "Miami",
-    "Seatle",
-    "Los Angeles",
-    "Chicago",
-    "London",
-    "Birmingham",
-    "Liverpool",
-    "Glasgow",
-    "Manchester",
-    "Paris",
-    "Bordeaux",
-    "Nice",
-    "Lyon",
-    "Strasbourg",
-    "Warsaw",
-    "Wrocław",
-    "Kraków",
-    "Poznań",
-    "Gdańsk",
-  ];
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    async function getCities() {
+      const fetchedCities = await fetchCities();
+      if (fetchedCities) {
+        setCities(fetchedCities);
+      }
+    }
+
+    getCities();
+  }, []);
 
   return (
-    <Container>
-      <Title>Our top cities</Title>
-      <List>
-        {cities.map((city, index) => (
-          <li key={index}>{city}</li>
-        ))}
-      </List>
-    </Container>
+    <>
+      {cities.length > 0 && (
+        <Container>
+          <Title>Our top cities</Title>
+          <List>
+            {cities.map(({ _id, name }) => (
+              <li key={_id}>{name}</li>
+            ))}
+          </List>
+        </Container>
+      )}
+    </>
   );
 };

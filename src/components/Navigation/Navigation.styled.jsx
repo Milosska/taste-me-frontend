@@ -11,6 +11,7 @@ export const StyledNav = styled.nav`
 `;
 
 export const LogoLink = styled(Link)`
+  margin-right: 10px;
   padding: 10px 0;
 
   font-family: "LilitaOne";

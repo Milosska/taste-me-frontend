@@ -6,6 +6,8 @@ const handleColorType = (color) => {
       return "#FFB30E";
     case "secondary":
       return "#F17228";
+    case "green":
+      return "green";
     default:
       return "lightgrey";
   }
@@ -14,6 +16,9 @@ const handleColorType = (color) => {
 export const StyledBtn = styled.button`
   padding: 10px 20px;
   background-color: ${(props) => handleColorType(props.color)};
+  color: ${(props) => (props.color === "green" ? "#ffffff" : "#000000")};
+
+  font-weight: 600;
 
   :hover,
   :focus {
