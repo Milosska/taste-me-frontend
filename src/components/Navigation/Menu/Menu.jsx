@@ -8,7 +8,7 @@ export const Menu = () => {
   return (
     <>
       <List>
-        {location.pathname === "/order" && (
+        {location.pathname !== "/" && (
           <li>
             <StyledLink to="/">
               <FaBackspace />

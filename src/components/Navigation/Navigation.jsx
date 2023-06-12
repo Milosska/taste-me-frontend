@@ -33,7 +33,7 @@ export const Navigation = () => {
       {navigator.geolocation && (
         <LocationText>
           <span>Deliver to:</span> <MdLocationPin />
-          {`${address}`}
+          {address ? `${address}` : "Unknown location"}
         </LocationText>
       )}
       {window.width <= 768 ? <MobileMenu /> : <Menu />}

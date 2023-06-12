@@ -18,6 +18,9 @@ export const StyledLink = styled(NavLink)`
   font-weight: 600;
   line-height: 1.12;
 
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   > svg {
     width: 20px;
     height: 20px;

@@ -20,6 +20,9 @@ export const StyledBtn = styled.button`
 
   font-weight: 600;
 
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover,
   :focus {
     box-shadow: 0px 5px 8px rgba(222, 151, 0, 0.24),

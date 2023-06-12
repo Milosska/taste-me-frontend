@@ -8,6 +8,7 @@ import {
   List,
   FooterThumb,
   SocialList,
+  SocialLink,
   StyledForm,
   SubscribeText,
   StyledInput,
@@ -41,34 +42,34 @@ export const GeneralFooter = () => {
           <Title>Follow Us</Title>
           <SocialList>
             <li>
-              <a
+              <SocialLink
                 href="https://github.com/Milosska"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="github"
               >
                 <FaGithub />
-              </a>
+              </SocialLink>
             </li>
             <li>
-              <a
+              <SocialLink
                 href="https://www.linkedin.com/in/liudmyla-deinychenko-b98799264/"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="linkedin"
               >
                 <FaLinkedin />
-              </a>
+              </SocialLink>
             </li>
             <li>
-              <a
+              <SocialLink
                 href="https://t.me/DeinychenkoLG"
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 aria-label="telegram"
               >
                 <FaTelegram />
-              </a>
+              </SocialLink>
             </li>
           </SocialList>
         </div>

@@ -45,6 +45,12 @@ export const List = styled.ul`
 
   a {
     color: #ffffff;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    :hover,
+    :focus {
+      color: #ffb30e;
+    }
   }
 `;
 
@@ -62,18 +68,28 @@ export const SocialList = styled.ul`
   justify-content: center;
   margin: 0 0 15px;
 
-  a {
-    color: #ffffff;
+  @media screen and (min-width: 765px) {
+    justify-content: start;
+    margin-top: 0;
   }
+`;
+
+export const SocialLink = styled.a`
+  color: #ffffff;
 
   svg {
     width: 30px;
     height: 30px;
-  }
+    transform: scale(1);
+    color: #ffffff;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 765px) {
-    justify-content: start;
-    margin-top: 0;
+    :hover,
+    :focus {
+      transform: scale(1.2);
+      color: #ffb30e;
+    }
   }
 `;
 

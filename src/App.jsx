@@ -11,6 +11,7 @@ const LoginPage = lazy(() => import("./pages/public/LoginPage/LoginPage"));
 const RegisterPage = lazy(() =>
   import("./pages/public/RegisterPage/RegisterPage")
 );
+import NotFoundPage from "./pages/public/NotFound/NotFound";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
             <Route path="order" element={<OrderPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="signup" element={<RegisterPage />} />
-            <Route path="*" element={<MainPage />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>
