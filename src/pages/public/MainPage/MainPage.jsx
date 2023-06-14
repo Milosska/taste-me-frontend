@@ -2,6 +2,7 @@ import * as locationSvg from "../../../images/svg/location.svg";
 import * as menuSvg from "../../../images/svg/menu.svg";
 import * as paymentSvg from "../../../images/svg/payment.svg";
 import * as mealsSvg from "../../../images/svg/meals.svg";
+import { RestaurantList } from "../../../components/Restaurants/RestaurantList/RestaurantList";
 import {
   Hero,
   HeroThumb,
@@ -13,6 +14,8 @@ import {
   AdvantagesList,
   AdvantagesImg,
   AdvantagesTitle,
+  RestaurantsSection,
+  RestaurantsHeadline,
 } from "./MainPage.styled";
 
 const MainPage = () => {
@@ -63,6 +66,10 @@ const MainPage = () => {
           </li>
         </AdvantagesList>
       </AdvantagesSection>
+      <RestaurantsSection>
+        <RestaurantsHeadline>Featured Restaurants</RestaurantsHeadline>
+        <RestaurantList />
+      </RestaurantsSection>
     </>
   );
 };

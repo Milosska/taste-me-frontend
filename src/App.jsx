@@ -4,6 +4,8 @@ import { GlobalStyles } from "./GlobalStyles";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import { Loader } from "./components/Loader/GlobalLoader/Loader";
+
 import { PublicLayout } from "./components/PublicLayout/PublicLayout";
 const MainPage = lazy(() => import("./pages/public/MainPage/MainPage"));
 const OrderPage = lazy(() => import("./pages/public/OrderPage/OrderPage"));
@@ -17,7 +19,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<PublicLayout />}>
             <Route index element={<MainPage />} />

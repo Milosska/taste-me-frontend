@@ -45,6 +45,12 @@ export const PictureThumb = styled.div`
   background-size: 120%;
   background-position: center;
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${bigImage.default});
+  }
+
   @media screen and (min-width: 768px) {
     width: 350px;
     height: 250px;

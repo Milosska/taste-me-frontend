@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { useWindowSize } from "react-use";
 
+import { Loader } from "../Loader/GlobalLoader/Loader";
 import { Navigation } from "../Navigation/Navigation";
 import { CitiesList } from "../Footer/CitiesList/CitiesList";
 import { GeneralFooter } from "../Footer/GeneralFooter/GeneralFooter";
@@ -17,7 +18,7 @@ export const PublicLayout = () => {
         <Navigation />
       </Header>
       <Main>
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </Main>

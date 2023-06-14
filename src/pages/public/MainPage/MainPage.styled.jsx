@@ -163,3 +163,16 @@ export const AdvantagesTitle = styled.p`
   font-weight: 700;
   margin-bottom: 10px;
 `;
+
+export const RestaurantsSection = styled.section`
+  padding: 20px;
+  text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    padding: 40px;
+  }
+`;
+
+export const RestaurantsHeadline = styled(AdvantagesHeadline)`
+  color: #000000;
+`;
