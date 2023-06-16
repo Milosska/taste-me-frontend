@@ -111,6 +111,7 @@ export const StyledInput = styled.input`
   background-color: #424242;
   border-radius: 8px;
   border: none;
+  color: #ffffff;
 
   @media screen and (min-width: 765px) {
     margin: 0;

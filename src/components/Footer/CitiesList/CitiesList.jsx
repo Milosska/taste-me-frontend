@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchCities } from "../../../utils/serverAPI/citiesAPI";
+import { fetchCities } from "src/utils/serverAPI/citiesAPI";
 import { Container, Title, List } from "./CitiesList.styled";
 
 export const CitiesList = () => {

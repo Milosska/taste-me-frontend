@@ -1,8 +1,8 @@
-import * as locationSvg from "../../../images/svg/location.svg";
-import * as menuSvg from "../../../images/svg/menu.svg";
-import * as paymentSvg from "../../../images/svg/payment.svg";
-import * as mealsSvg from "../../../images/svg/meals.svg";
-import { RestaurantList } from "../../../components/Restaurants/RestaurantList/RestaurantList";
+import * as locationSvg from "src/images/svg/location.svg";
+import * as menuSvg from "src/images/svg/menu.svg";
+import * as paymentSvg from "src/images/svg/payment.svg";
+import * as mealsSvg from "src/images/svg/meals.svg";
+import { RestaurantList } from "src/components/Restaurants/RestaurantList/RestaurantList";
 import {
   Hero,
   HeroThumb,

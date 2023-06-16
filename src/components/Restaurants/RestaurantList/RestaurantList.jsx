@@ -69,7 +69,7 @@ export const RestaurantList = () => {
         ))}
         <ObserverDiv ref={observerRef}></ObserverDiv>
       </List>
-      {page <= 1 && (
+      {restaurants.length > 0 && page <= 1 && (
         <MoreBtn onClick={handleClick}>
           View all <MdExpandMore />
         </MoreBtn>
