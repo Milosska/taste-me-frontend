@@ -1,4 +1,5 @@
-import { ProductList } from "src/components/Products/ProductList/ProductList.jsx";
+import { FoodsList } from "src/components/Foods/FoodsList/FoodsList.jsx";
+import { FoodCathegoryFilter } from "src/components/Filters/FoodCathegoryFilter/FoodCathegoryFilter.jsx";
 import { OrderForm } from "src/components/Order/OrderForm/OrderForm.jsx";
 import { Button } from "src/components/Button/Button";
 import {
@@ -33,13 +34,8 @@ const OrderPage = () => {
               <li>Logo</li>
             </ul>
           </div> */}
-          {/* <div>
-            <p>Cathegory</p>
-            <ul>
-              <li>Icon</li>
-            </ul>
-          </div> */}
-          <ProductList />
+          <FoodCathegoryFilter />
+          <FoodsList />
         </MainSection>
       </Container>
     </>

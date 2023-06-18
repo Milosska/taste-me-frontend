@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { OrderLink } from "src/components/Hero/Hero.styled";
-import * as spaghettiImage from "../../../images/order/spaghetti.png";
-import * as bigSpaghettiImage from "../../../images/order/spaghetti@2x.png";
+import * as spaghettiImage from "src/images/order/spaghetti.png";
+import * as bigSpaghettiImage from "src/images/order/spaghetti@2x.png";
 
 export const Container = styled.div`
   @media screen and (min-width: 1200px) {
@@ -14,11 +14,6 @@ export const Container = styled.div`
 export const MainSection = styled.section`
   grid-column: 1;
   grid-row: 1;
-  padding: 0 20px;
-
-  @media screen and (min-width: 1200px) {
-    padding: 0 15px 0 40px;
-  }
 `;
 
 export const SideSection = styled.section`

@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-  padding: 5px;
+  padding: 10px;
   box-shadow: none;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     box-shadow: 0px 5px 10px rgba(255, 174, 0, 0.26),
-      0px 20px 40px rgba(255, 174, 0, 0.29);
+      0px 10px 20px rgba(255, 174, 0, 0.29);
     border-radius: 15px;
   }
 `;
 
 export const PhotoThumb = styled.div`
   width: 100%;
-  height: 150px;
+  height: 100px;
 
   background-image: ${(props) => `url(${props.img})`};
   background-repeat: no-repeat;
@@ -24,6 +24,10 @@ export const PhotoThumb = styled.div`
   border-radius: 16px;
 
   outline: 2px solid #faaa01;
+
+  @media screen and (min-width: 768px) {
+    height: 150px;
+  }
 `;
 
 export const Title = styled.h4`
@@ -74,13 +78,14 @@ export const Price = styled.p`
   }
 `;
 
-export const AddFoodBtn = styled.button`
-  display: inline-block;
+export const BtnThumb = styled.div`
   grid-row-start: 2;
   grid-row-end: 4;
   justify-self: end;
   align-self: center;
+`;
 
+export const AddFoodBtn = styled.button`
   width: 38px;
   height: 38px;
 
