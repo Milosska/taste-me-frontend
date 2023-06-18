@@ -1,3 +1,4 @@
+import { ProductList } from "src/components/Products/ProductList/ProductList.jsx";
 import { OrderForm } from "src/components/Order/OrderForm/OrderForm.jsx";
 import { Button } from "src/components/Button/Button";
 import {
@@ -38,6 +39,7 @@ const OrderPage = () => {
               <li>Icon</li>
             </ul>
           </div> */}
+          <ProductList />
         </MainSection>
       </Container>
     </>

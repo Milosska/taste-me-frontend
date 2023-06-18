@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { setRestaurant } from "src/redux/restaurant/slice";
 
 import { MdDiscount } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
@@ -34,6 +36,7 @@ export const RestaurantCard = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { VITE_CLOUDINARY_BASE_URI } = import.meta.env;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const date = new Date();
@@ -57,6 +60,10 @@ export const RestaurantCard = ({
     }
   }, [open_time, close_time]);
 
+  const handleClick = (name) => {
+    dispatch(setRestaurant(name));
+  };
+
   return (
     <ReactPlaceholder
       showLoadingAnimation
@@ -64,7 +71,7 @@ export const RestaurantCard = ({
       ready={!isLoading}
     >
       <Container>
-        <StyledLink to="/order">
+        <StyledLink to="/order" onClick={() => handleClick(name)}>
           <PhotoThumb img={`${VITE_CLOUDINARY_BASE_URI}${background_URL}`}>
             {current_discount_percent && (
               <DiscountLabel>

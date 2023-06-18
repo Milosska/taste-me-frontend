@@ -18,9 +18,6 @@ export const PhotoThumb = {
   width: "100%",
   height: 150,
   borderRadius: 16,
-  // "  @media screen and (min-width: 768px) {
-  //     height: 200px,
-  // }"
 };
 
 export const LogoThumb = styled.div`

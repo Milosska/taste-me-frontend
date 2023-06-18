@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import * as descktopImage from "../../../images/main/descktop-hero.png";
-import * as tabletImage from "../../../images/main/tablet-hero.png";
-import * as bigDescktopImage from "../../../images/main/descktop-hero@2x.png";
-import * as bigTabletImage from "../../../images/main/tablet-hero@2x.png";
+import * as descktopImage from "src/images/main/descktop-hero.png";
+import * as tabletImage from "src/images/main/tablet-hero.png";
+import * as bigDescktopImage from "src/images/main/descktop-hero@2x.png";
+import * as bigTabletImage from "src/images/main/tablet-hero@2x.png";
 
 export const Hero = styled.section`
   width: 100%;
@@ -109,70 +109,4 @@ export const OrderLink = styled(Link)`
     box-shadow: 0px 15px 20px rgba(205, 47, 47, 0.24),
       0px 25px 40px rgba(97, 3, 11, 0.27);
   }
-`;
-
-export const AdvantagesSection = styled.section`
-  padding: 20px;
-
-  background-image: linear-gradient(
-    180deg,
-    rgba(255, 206, 103, 0.22) -42.47%,
-    rgba(253, 237, 202, 0) 100%
-  );
-
-  text-align: center;
-
-  @media screen and (min-width: 1200px) {
-    padding: 40px;
-  }
-`;
-
-export const AdvantagesHeadline = styled.h2`
-  margin-bottom: 20px;
-
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.12;
-  color: #f17228;
-
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 40px;
-  }
-`;
-
-export const AdvantagesList = styled.ul`
-  margin: 0;
-
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
-  }
-`;
-
-export const AdvantagesImg = styled.img`
-  margin: 10px auto;
-
-  @media screen and (min-width: 768px) {
-    margin: 0 auto 10px;
-  }
-`;
-
-export const AdvantagesTitle = styled.p`
-  font-weight: 700;
-  margin-bottom: 10px;
-`;
-
-export const RestaurantsSection = styled.section`
-  padding: 20px;
-  text-align: center;
-
-  @media screen and (min-width: 1200px) {
-    padding: 40px;
-  }
-`;
-
-export const RestaurantsHeadline = styled(AdvantagesHeadline)`
-  color: #000000;
 `;
