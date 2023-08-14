@@ -62,6 +62,7 @@ export const RestaurantCard = ({
 
   const handleClick = (name) => {
     dispatch(setRestaurant(name));
+    window.scrollTo(0, 0);
   };
 
   return (

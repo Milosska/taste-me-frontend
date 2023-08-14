@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Container = styled.li`
   padding: 10px;
   box-shadow: none;
+  border-radius: 15px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     box-shadow: 0px 5px 10px rgba(255, 174, 0, 0.26),
       0px 10px 20px rgba(255, 174, 0, 0.29);
-    border-radius: 15px;
   }
 `;
 

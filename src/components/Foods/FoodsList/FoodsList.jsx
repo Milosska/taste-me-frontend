@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { current_restaurant } from "src/redux/restaurant/selectors";
+// import { cathegory } from "src/redux/fliters/selectors";
 import { fetchFoodsByRestaurant } from "src/utils/serverAPI/foodsAPI";
 
 import { FoodsCard } from "../FoodsCard/FoodsCard";
@@ -12,6 +13,7 @@ export const FoodsList = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const restaurant = useSelector(current_restaurant);
+  // const currentCathegory = useSelector(cathegory);
   const observerRef = useRef();
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export const FoodsList = () => {
     return () => {
       observer.unobserve(observerElem);
     };
-  }, [setPage, foods]);
+  }, [setPage, foods, totalCount]);
 
   return (
     <Container>

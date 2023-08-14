@@ -34,11 +34,14 @@ export const Item = styled.li`
   grid-template-rows: 2fr 1fr;
   justify-items: center;
 
-  width: 82px;
-  height: 82px;
+  width: 72px;
+  height: 72px;
   padding: 10px 5px;
   border-radius: 16px;
-  background-color: #faaa01;
+  background-color: ${(prop) => {
+    const isChoosen = prop.children[1].props.children === prop.choosedFilter;
+    return isChoosen ? "green" : "#faaa01";
+  }};
 
   font-weight: 700;
   color: #ffffff;
@@ -53,7 +56,11 @@ export const Item = styled.li`
   }
 
   > svg {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+  }
+
+  > p {
+    font-size: 14px;
   }
 `;
