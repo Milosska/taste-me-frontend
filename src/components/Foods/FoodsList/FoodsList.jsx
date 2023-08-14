@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { current_restaurant } from "src/redux/restaurant/selectors";
-// import { cathegory } from "src/redux/fliters/selectors";
+import { cathegory } from "src/redux/fliters/selectors";
 import { fetchFoodsByRestaurant } from "src/utils/serverAPI/foodsAPI";
 
 import { FoodsCard } from "../FoodsCard/FoodsCard";
@@ -12,18 +12,27 @@ export const FoodsList = () => {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchCathegory, setSearchCathegory] = useState(null);
   const restaurant = useSelector(current_restaurant);
-  // const currentCathegory = useSelector(cathegory);
+  const currentCathegory = useSelector(cathegory);
   const observerRef = useRef();
 
   useEffect(() => {
     const abortController = new AbortController();
     setIsLoading(true);
 
-    fetchFoodsByRestaurant(restaurant, page, 15, abortController.signal)
+    fetchFoodsByRestaurant(
+      restaurant,
+      page,
+      15,
+      abortController.signal,
+      searchCathegory
+    )
       .then((res) => {
         if (res) {
-          setFoods((prevState) => [...prevState, ...res.results]);
+          page === 1
+            ? setFoods([...res.results])
+            : setFoods((prevState) => [...prevState, ...res.results]);
           setTotalCount(res.totalCount);
         }
       })
@@ -33,7 +42,14 @@ export const FoodsList = () => {
     return () => {
       abortController.abort();
     };
-  }, [restaurant, page]);
+  }, [restaurant, page, searchCathegory]);
+
+  useEffect(() => {
+    if (searchCathegory !== currentCathegory) {
+      setSearchCathegory(currentCathegory);
+      setPage(1);
+    }
+  }, [currentCathegory, searchCathegory]);
 
   useEffect(() => {
     // Endless scroll

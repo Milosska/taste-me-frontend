@@ -4,6 +4,9 @@ import { GlobalStyles } from "./GlobalStyles";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Loader } from "./components/Loader/GlobalLoader/Loader";
 
 import { PublicLayout } from "./components/PublicLayout/PublicLayout";
@@ -30,6 +33,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      <ToastContainer />
     </>
   );
 }
