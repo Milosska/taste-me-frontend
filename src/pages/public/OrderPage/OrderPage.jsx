@@ -1,4 +1,5 @@
 import { FoodsList } from "src/components/Foods/FoodsList/FoodsList.jsx";
+import { RestaurantFilter } from "src/components/Filters/RestaurantFilter/RestaurantFilter.jsx";
 import { FoodCathegoryFilter } from "src/components/Filters/FoodCathegoryFilter/FoodCathegoryFilter.jsx";
 import { OrderForm } from "src/components/Order/OrderForm/OrderForm.jsx";
 import { Button } from "src/components/Button/Button";
@@ -6,6 +7,7 @@ import {
   Container,
   MainSection,
   SideSection,
+  Filters,
   AccountThumb,
   AccountLink,
   CurrentOrderSection,
@@ -28,13 +30,10 @@ const OrderPage = () => {
           <Button text="Submit" color="primary" type="submit" />
         </SideSection>
         <MainSection>
-          {/* <div>
-            <p>Restaurant</p>
-            <ul>
-              <li>Logo</li>
-            </ul>
-          </div> */}
-          <FoodCathegoryFilter />
+          <Filters>
+            <RestaurantFilter />
+            <FoodCathegoryFilter />
+          </Filters>
           <FoodsList />
         </MainSection>
       </Container>

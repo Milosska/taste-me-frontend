@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import * as descktopImage from "src/images/main/descktop-hero.png";
-import * as tabletImage from "src/images/main/tablet-hero.png";
-import * as bigDescktopImage from "src/images/main/descktop-hero@2x.png";
-import * as bigTabletImage from "src/images/main/tablet-hero@2x.png";
+import * as descktopImage from "src/assets/images/main/descktop-hero.png";
+import * as tabletImage from "src/assets/images/main/tablet-hero.png";
+import * as bigDescktopImage from "src/assets/images/main/descktop-hero@2x.png";
+import * as bigTabletImage from "src/assets/images/main/tablet-hero@2x.png";
 
 export const Hero = styled.section`
   width: 100%;

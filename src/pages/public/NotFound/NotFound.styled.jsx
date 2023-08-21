@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { OrderLink } from "src/components/Hero/Hero.styled";
-import * as image from "src/images/notfound/notFound.png";
-import * as bigImage from "src/images/notfound/notFound@2x.png";
+import * as image from "src/assets/images/notfound/notFound.png";
+import * as bigImage from "src/assets/images/notfound/notFound@2x.png";
 
 export const Container = styled.div`
   width: 100vw;

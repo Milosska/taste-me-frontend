@@ -1,7 +1,7 @@
-import * as locationSvg from "src/images/svg/location.svg";
-import * as menuSvg from "src/images/svg/menu.svg";
-import * as paymentSvg from "src/images/svg/payment.svg";
-import * as mealsSvg from "src/images/svg/meals.svg";
+import * as locationSvg from "src/assets/images/svg/location.svg";
+import * as menuSvg from "src/assets/images/svg/menu.svg";
+import * as paymentSvg from "src/assets/images/svg/payment.svg";
+import * as mealsSvg from "src/assets/images/svg/meals.svg";
 import {
   StyledSection,
   AdvantagesHeadline,

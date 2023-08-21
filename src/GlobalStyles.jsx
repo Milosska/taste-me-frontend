@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import LilitaOne from "./fonts/LilitaOne-Regular.ttf";
+import LilitaOne from "./assets/fonts/LilitaOne-Regular.ttf";
 
 export const GlobalStyles = createGlobalStyle`
     @font-face {
