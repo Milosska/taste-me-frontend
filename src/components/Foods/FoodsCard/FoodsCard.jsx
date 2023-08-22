@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
-import { FaDollarSign, FaPlus } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
+import { useDispatch } from "react-redux";
+import {
+  addItemToCart,
+  removeItemFromCart,
+} from "src/redux/shoppingCart/slice";
+
+import { FaDollarSign, FaPlus, FaMinus } from "react-icons/fa";
 import ReactPlaceholder from "react-placeholder";
 import "react-placeholder/lib/reactPlaceholder.css";
 import { FoodsCardPaleceholder } from "src/components/Loader/Placeholders/FoodsCardPlaceholder/FoodsCardPlaceholder";
@@ -17,11 +24,24 @@ import {
   AddFoodBtn,
 } from "./FoodsCard.styled";
 
-export const FoodsCard = ({
-  food: { name, imgURL, price, type, cuisine },
-  isLoading,
-}) => {
+export const FoodsCard = ({ food, isLoading, isInCart }) => {
   const { VITE_CLOUDINARY_BASE_URI } = import.meta.env;
+  const [isAdded, setIsAdded] = useState(isInCart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isAdded) {
+      dispatch(addItemToCart(food));
+    }
+
+    if (isAdded === false) {
+      dispatch(removeItemFromCart(food));
+    }
+  }, [isAdded, dispatch, food]);
+
+  const handleClick = () => {
+    isAdded ? setIsAdded(false) : setIsAdded(true);
+  };
 
   return (
     <ReactPlaceholder
@@ -30,18 +50,18 @@ export const FoodsCard = ({
       ready={!isLoading}
     >
       <Container>
-        <PhotoThumb img={`${VITE_CLOUDINARY_BASE_URI}${imgURL}`} />
-        <Title>{name}</Title>
+        <PhotoThumb img={`${VITE_CLOUDINARY_BASE_URI}${food.imgURL}`} />
+        <Title>{food.name}</Title>
         <FoodDataThumb>
-          <Type>{type}</Type>
-          {cuisine && <Cuisine>{cuisine}</Cuisine>}
+          <Type>{food.type}</Type>
+          {food.cuisine && <Cuisine>{food.cuisine}</Cuisine>}
           <Price>
             <FaDollarSign />
-            {price}
+            {food.price}
           </Price>
           <BtnThumb>
-            <AddFoodBtn type="button">
-              <FaPlus />
+            <AddFoodBtn type="button" onClick={handleClick} isAdded={isAdded}>
+              {isAdded ? <FaMinus /> : <FaPlus />}
             </AddFoodBtn>
           </BtnThumb>
         </FoodDataThumb>
@@ -59,4 +79,5 @@ FoodsCard.propTypes = {
     cuisine: PropTypes.string,
   }),
   isLoading: PropTypes.bool,
+  isInCart: PropTypes.oneOf([null, true]),
 };

@@ -89,16 +89,15 @@ export const AddFoodBtn = styled.button`
   width: 38px;
   height: 38px;
 
-  background-color: #ffb30e;
+  background-color: ${({ isAdded }) => (isAdded ? "#e74c3c" : "#ffb30e")};
   color: #ffffff;
   font-weight: 600;
 
   box-shadow: none;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  :hover,
-  :focus {
-    box-shadow: 0px 5px 8px rgba(222, 151, 0, 0.24),
-      0px 14px 32px rgba(255, 178, 14, 0.29);
+  :hover {
+    box-shadow: rgba(205, 47, 47, 0.24) 0px 15px 20px,
+      rgba(97, 3, 11, 0.27) 0px 25px 40px;
   }
 `;

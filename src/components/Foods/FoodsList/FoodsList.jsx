@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { current_restaurant } from "src/redux/restaurant/selectors";
+import { shopping_cart } from "src/redux/shoppingCart/selectors";
 import { cathegory } from "src/redux/fliters/selectors";
 import { fetchFoodsByRestaurant } from "src/utils/serverAPI/foodsAPI";
 
@@ -14,6 +15,7 @@ export const FoodsList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchCathegory, setSearchCathegory] = useState(null);
   const restaurant = useSelector(current_restaurant);
+  const currentOrder = useSelector(shopping_cart);
   const currentCathegory = useSelector(cathegory);
   const observerRef = useRef();
 
@@ -95,7 +97,22 @@ export const FoodsList = () => {
     <Container>
       <List>
         {foods.map((food) => {
-          return <FoodsCard key={food._id} food={food} isLoading={isLoading} />;
+          let isInCart = null;
+
+          currentOrder.map((item) => {
+            if (item._id === food._id) {
+              isInCart = true;
+            }
+          });
+
+          return (
+            <FoodsCard
+              key={food._id}
+              food={food}
+              isLoading={isLoading}
+              isInCart={isInCart}
+            />
+          );
         })}
       </List>
       <ObserverDiv ref={observerRef}></ObserverDiv>
