@@ -1,16 +1,16 @@
 import { MdLocationPin, MdPhoneInTalk } from "react-icons/md";
 import {
-  AddressForm,
+  FormContainer,
   FormTitle,
   FormThumb,
   FormLabel,
   FormInputWrapper,
   FormInput,
-} from "./OrderForm.styled";
+} from "./AddressForm.styled";
 
-export const OrderForm = () => {
+export const AddressForm = () => {
   return (
-    <AddressForm>
+    <FormContainer>
       <FormTitle>Indicate your delivery data</FormTitle>
       <FormThumb>
         <FormLabel htmlFor="address">Address</FormLabel>
@@ -34,6 +34,6 @@ export const OrderForm = () => {
           />
         </FormInputWrapper>
       </FormThumb>
-    </AddressForm>
+    </FormContainer>
   );
 };

@@ -45,6 +45,10 @@ export const FoodsList = () => {
   }, [restaurant, page, searchCathegory]);
 
   useEffect(() => {
+    setPage(1);
+  }, [restaurant]);
+
+  useEffect(() => {
     if (searchCathegory !== currentCathegory) {
       setSearchCathegory(currentCathegory);
       setPage(1);

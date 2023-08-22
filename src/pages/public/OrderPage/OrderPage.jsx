@@ -1,7 +1,8 @@
 import { FoodsList } from "src/components/Foods/FoodsList/FoodsList.jsx";
 import { RestaurantFilter } from "src/components/Filters/RestaurantFilter/RestaurantFilter.jsx";
 import { FoodCathegoryFilter } from "src/components/Filters/FoodCathegoryFilter/FoodCathegoryFilter.jsx";
-import { OrderForm } from "src/components/Order/OrderForm/OrderForm.jsx";
+import { AddressForm } from "src/components/Order/AddressForm/AddressForm.jsx";
+import { ShoppingCart } from "src/components/Order/ShoppingCart/ShoppingCart.jsx";
 import { Button } from "src/components/Button/Button";
 import {
   Container,
@@ -10,8 +11,6 @@ import {
   Filters,
   AccountThumb,
   AccountLink,
-  CurrentOrderSection,
-  CurrentOrderTitle,
 } from "./OrderPage.styled.jsx";
 
 const OrderPage = () => {
@@ -23,10 +22,8 @@ const OrderPage = () => {
             <p>Do not have an account?</p>
             <AccountLink to="/signup">Create</AccountLink>
           </AccountThumb>
-          <OrderForm />
-          <CurrentOrderSection>
-            <CurrentOrderTitle>Current order</CurrentOrderTitle>
-          </CurrentOrderSection>
+          <AddressForm />
+          <ShoppingCart />
           <Button text="Submit" color="primary" type="submit" />
         </SideSection>
         <MainSection>

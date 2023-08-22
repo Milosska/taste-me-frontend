@@ -71,17 +71,3 @@ export const AccountLink = styled(OrderLink)`
   margin-top: 10px;
   padding: 8px 25px;
 `;
-
-export const CurrentOrderSection = styled.div`
-  padding: 20px 15px 0;
-
-  @media screen and (min-width: 768px) {
-    padding: 30px 20px 0;
-  }
-`;
-
-export const CurrentOrderTitle = styled.h3`
-  /* margin-bottom: 20px; */
-  text-align: center;
-  font-size: 22px;
-`;

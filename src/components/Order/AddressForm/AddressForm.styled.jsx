@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AddressForm = styled.form`
+export const FormContainer = styled.form`
   padding: 20px 15px;
   background-color: #feefd0;
 
